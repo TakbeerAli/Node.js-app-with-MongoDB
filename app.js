@@ -32,50 +32,61 @@ const personSchema = new mongoose.Schema({
 name :String,
 age:Number,
 CNIC:Number,
-Location:String
+Location:String,
+favrouriteFruit:fruitShema
 });
 
-const Person = mongoose.model("Person", personSchema);
+// const Person = mongoose.model("Person", personSchema);
 
-const person = new Person({
-name:"Ali",
-age:22,
-CNIC:144-222-3333,
-Location:"KOHAT"
-});
+// const mango = new Fruit({
+//     name: "mango",
+//     rating: 2,
+//     review:"This is very good fruit"
+// });
+// mango.save();
 
- Fruit.find(function(err,fruits){ // this is find records in database
-if(err)
-{
-    console.log(err)
-}else{
-
-    mongoose.connection.close();
-    fruits.forEach(function(fruit){
-
-  console.log(fruit.name)
-    });
-}
-
-});
-
-// Fruit.updateOne({_id:"5fa7f65108dc02319072f289"}, {name:"Peach"},function(err){  //this wil update records in database
-// if(err)
-// {
-//    console.log(err)
-// }else{
-//    console.log("Succesfully Updated")
-// }
+// const person = new Person({
+// name:"Hassan",
+// age:25,
+// CNIC:333333333,
+// Location:"Quetta",
+// favrouriteFruit:pineapple
 // });
 
-Fruit.deleteOne({ name:"Peach"}, function(err){  // this is for delete Onlu One record from DB
-    if(err){
-        console.log(err)
-    }else{
-        console.log("Record Deleted")
-    }
+// person.save();
+
+//  Fruit.find(function(err,fruits){ // this is find records in database
+// if(err)
+// {
+//     console.log(err)
+// }else{
+
+//     mongoose.connection.close();
+//     fruits.forEach(function(fruit){
+
+//   console.log(fruit.name)
+//     });
+// }
+
+// });
+
+Person.updateOne({_id:"5fa6cda8fd80c8217cd3ab63"}, {favrouriteFruit:mango},function(err){  //this wil update records in database
+if(err)
+{
+   console.log(err)
+}else{
+   console.log("Succesfully Updated")
+}
+});
+
+// Fruit.deleteOne({ name:"Peach"}, function(err){  // this is for delete Onlu One record from DB
+//     if(err){
+//         console.log(err)
+//     }else{
+//         console.log("Record Deleted")
+//     }
     
-    });
+//     });
 
 // Fruit.deleteMany({ name:"bnana"}, function(err){  // this is for delete many records from DB
 // if(err){
